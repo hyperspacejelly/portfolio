@@ -1,6 +1,15 @@
+/**************************Main Tab Behavior*******************************/
 .tab{
+    display: flex;
+    position: relative;
     flex: 1 1 auto;
-    transition: flex 400ms ease-in-out;
+    transition: flex 400ms ease-in-out, background-color 400ms ease-in-out;
+
+    overflow: hidden;
+
+    font-size: 1.6rem;
+
+    box-shadow: -5px 0px 15px rgb(0, 0, 0, 0.3);
 }
 
 .tab-unopened{
@@ -19,18 +28,102 @@
     flex: 1 1 3%;
 }
 .tab-minimized:hover{
-    flex-grow: 1.2;
+    flex-grow: 1.3;
 }
 
-#tech{
-    background-color: honeydew;
+
+/*Behavior of the title of the tab when default, opened and minimized*/
+.tab-title{
+    pointer-events: none;
+
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+
+    visibility: visible;
+    transition: visibility 200ms ease-out, opacity 200ms ease-out;
+
+    margin: 0;
 }
+.tab-title span{
+    display: block;
+    width: fit-content;
+    height: fit-content;
+    font-size: 3rem;
+
+    text-transform: uppercase;
+
+    transition: transform 200ms;
+}
+
+.tab-minimized .tab-title span{
+    transform: rotate(-90deg);
+}
+
+.tab-opened .tab-title{
+    visibility: collapse;
+    opacity: 0;
+}
+
+/*****************Tab Content Behavior*********************/
+.tab-content{
+    pointer-events: none;
+
+    width: 70vw;
+    display: flex;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-direction: column;
+    transition: opacity 400ms ease-in-out, transform 400ms ease-in-out, visibility 400ms ease-in-out;
+}
+
+.tab-unopened .tab-content,
+.tab-minimized .tab-content{
+    visibility: hidden;
+    opacity: 0.3;
+    transform: translateX(3vw);
+}
+
+
+.tab-opened .tab-content{
+    visibility: visible;
+   
+    opacity: 1;
+    transform: translateX(0vw);
+}
+
+/*******************Individual Tab Behavior***************/
+
+#tech{
+    background-color:darkseagreen;
+    z-index: 700;
+}
+
 #portfolio{
     background-color: indianred;
+    z-index: 800;
 }
+
 #experience{
     background-color: mediumslateblue;
+    z-index: 900;
 }
+
 #other{
     background-color: moccasin;
+    z-index: 1000;
+}
+
+#tech.tab-opened,
+#portfolio.tab-opened,
+#experience.tab-opened,
+#other.tab-opened{
+    background-color: floralwhite;
 }

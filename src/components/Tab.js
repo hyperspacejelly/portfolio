@@ -1,10 +1,17 @@
 import './css/tab.css';
 
-function Tab({content, id}){
+/* the Tab component takes 3 props
+
+ content => another component that'll be the content displayed when the tab is opened
+ id => the ID that'll be applied to the tab container in order to style it independently of the others
+ title => the displayed name of the tab 
+ 
+*/
+
+function Tab({content, id, title}){
+    const tabs = document.getElementsByClassName("tab");
 
     function resetTabs(){
-        const tabs = document.getElementsByClassName("tab");
-
         for(let tab of tabs){
             tab.className="tab tab-unopened";
         }
@@ -34,8 +41,15 @@ function Tab({content, id}){
     }
 
     return(
-        <div id={id} className="tab tab-unopened" onClick={(e)=>openTab(e)}>
-            {content}
+        <div id={id} className="tab tab-unopened" 
+            onClick={(e)=> {
+                    e.stopPropagation(); 
+                    openTab(e);
+                    }}>
+            <h2 className='tab-title'><span>{title}</span></h2>
+            <section className='tab-content tab-content-hidden'>
+                {content}
+            </section>
         </div>
     );
 }

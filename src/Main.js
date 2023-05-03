@@ -1,6 +1,9 @@
 import { useState, useRef, useEffect } from "react";
 import SideBar from "./components/SideBar";
 import Tab from "./components/Tab";
+import Portfolio from "./components/Portfolio";
+import Tech from "./components/Tech";
+import ContactForm from "./components/ContactForm";
 
 async function getData(lang){
   const API_ENDPOINT = "https://api.lucien-jely.fr/read.php?lang=";
@@ -12,6 +15,7 @@ async function getData(lang){
 function Main() {
   const [lang, setLang] = useState("fr");
   const [data, setData] = useState(null);
+  const [contactOpen, setContactOpen] = useState(false);
 
   useEffect(()=>{
    getData(lang).then((res)=>setData(res));
@@ -21,15 +25,20 @@ function Main() {
     getData(lang).then((res)=>setData(res));
    },[lang]);
 
+  function toggleContact(){
+    contactOpen ? setContactOpen(false) : setContactOpen(true);
+  }
+
   return (
     <>
       {data!=null && <>
-          <SideBar setLang={setLang} info={data.info} />
+          <SideBar setLang={setLang} info={data.info} toggleContact={toggleContact}/>
           <main>
-            <Tab id="tech" content={<h3>tech</h3>}/>
-            <Tab id="portfolio" content={<h3>portfolio</h3>}/>
-            <Tab id="experience" content={<h3>experience</h3>}/>
-            <Tab id="other" content={<h3>other</h3>}/>
+            <ContactForm lang={lang} toggle={contactOpen} toggleOff={()=>setContactOpen(false)} />
+            <Tab id="tech" content={<Tech content={data.tech.content} />} title="Tech"/>
+            <Tab id="portfolio" content={<Portfolio content={data.portfolio.content} />} title="Portfolio"/>
+            <Tab id="experience" content={<h3>experience</h3>} title="Experience"/>
+            <Tab id="other" content={<h3>other</h3>} title="Other"/>
           </main>
         </>}
       {data===null && <></>}
