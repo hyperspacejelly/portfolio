@@ -60,11 +60,17 @@
 
     text-transform: uppercase;
 
-    transition: transform 200ms;
+    transition: transform 200ms, font-size 200ms;
+
+    color: var(--white-bg-font);
+    text-shadow: 0px 0px 5px black;
+
+    font-size: 4rem;
 }
 
 .tab-minimized .tab-title span{
     transform: rotate(-90deg);
+    font-size: 2vw;
 }
 
 .tab-opened .tab-title{
@@ -74,6 +80,8 @@
 
 /*****************Tab Content Behavior*********************/
 .tab-content{
+    padding: 1vh 0vw 0vh 2vw;
+
     pointer-events: none;
 
     width: 70vw;
@@ -102,22 +110,26 @@
 /*******************Individual Tab Behavior***************/
 
 #tech{
-    background-color:darkseagreen;
+    /*background-color:darkseagreen;*/
+    background-color: var(--tab-4);
     z-index: 700;
 }
 
 #portfolio{
-    background-color: indianred;
+    /* background-color: indianred; */
+    background-color: var(--tab-3);
     z-index: 800;
 }
 
 #experience{
-    background-color: mediumslateblue;
+    /* background-color: mediumslateblue; */
+    background-color: var(--tab-2);
     z-index: 900;
 }
 
 #other{
-    background-color: moccasin;
+    /* background-color: moccasin; */
+    background-color: var(--tab-1);
     z-index: 1000;
 }
 
@@ -125,5 +137,5 @@
 #portfolio.tab-opened,
 #experience.tab-opened,
 #other.tab-opened{
-    background-color: floralwhite;
+    background-color: var(--white-bg-font);
 }

@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState,  useEffect } from "react";
 import SideBar from "./components/SideBar";
 import Tab from "./components/Tab";
 import Portfolio from "./components/Portfolio";
@@ -38,7 +38,7 @@ function Main() {
             <Tab id="tech" content={<Tech content={data.tech.content} />} title="Tech"/>
             <Tab id="portfolio" content={<Portfolio content={data.portfolio.content} />} title="Portfolio"/>
             <Tab id="experience" content={<h3>experience</h3>} title="Experience"/>
-            <Tab id="other" content={<h3>other</h3>} title="Other"/>
+            <Tab id="other" content={<h3>other</h3>} title={lang==="en"?"Other":"Autre"}/>
           </main>
         </>}
       {data===null && <></>}
