@@ -97,8 +97,10 @@
     display: flex;
     flex-direction: column;
 }
+
+.form-subject,
 .form-msg{
-    width: 100%;
+    width: 80%;
 }
 .row-label{
     margin: 0;
@@ -109,7 +111,7 @@
 }
 
 .form-submit{
-    flex-shrink: 3;
+    width: 20%;
     justify-content: center;
     align-items: center;
 

@@ -34,6 +34,7 @@
 
 /*Behavior of the title of the tab when default, opened and minimized*/
 .tab-title{
+    text-align: center;
     pointer-events: none;
 
     display: flex;

@@ -1,5 +1,4 @@
 import { useRef, useState } from "react";
-import axios, { Axios } from "axios";
 import './css/contactForm.css';
 
 function ContactForm({toggle, toggleOff, lang}){
@@ -7,6 +6,7 @@ function ContactForm({toggle, toggleOff, lang}){
     const [lname, setLname] = useState("");
     const [email, setEmail] = useState("");
     const [tel, setTel] = useState("");
+    const [subject, setSubject] = useState("");
     const [msg, setMsg] = useState("");
 
     function clearForm(){
@@ -14,7 +14,23 @@ function ContactForm({toggle, toggleOff, lang}){
         setLname("");
         setEmail("");
         setTel("");
+        setSubject("");
         setMsg("");
+    }
+
+    async function postFormData(payload){
+        const url="https://api.lucien-jely.fr/contact/send.php";
+        const raw_response = await fetch(url, {
+            method: "POST",
+            mode: "cors",
+            headers: {
+                "Content-Type": "application/json",
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(payload)
+        });
+        const response = raw_response.json();
+        return response;
     }
 
     function handleSubmit(e){
@@ -24,10 +40,15 @@ function ContactForm({toggle, toggleOff, lang}){
             lname: lname,
             email: email,
             tel: tel,
+            subject: subject,
             msg: msg
         }
-        console.log(payload);
-        clearForm();
+        postFormData(payload).then(res=>{
+            console.log(res);
+            if(res.status=="200"){
+                clearForm();
+            } 
+        });
     }
     return(
         <>
@@ -67,8 +88,20 @@ function ContactForm({toggle, toggleOff, lang}){
                             <div className="form-elem">
                                 <label htmlFor="form-email">{lang==="en"?"Email address":"Adresse email"}</label>
                                 <input type="email" name="email" id="form-email"
+                                       placeholder={lang==="en"?"Required":"Requis"} 
                                        value={email}
                                        onInput={(e)=>setEmail(e.target.value)} />
+                            </div>
+                        </section>
+                        <section className="form-row row-label">
+                            <label htmlFor="subject">{lang==="en"?"Message subject":"Sujet de votre message"}</label>
+                        </section>
+                        <section className="form-row">
+                            <div className="form-elem form-subject">
+                                <input id="subject" name="subject" type="text" 
+                                    placeholder={lang==="en"?"Required":"Requis"}
+                                    value={subject}
+                                    onInput={(e)=>setSubject(e.target.value)} />
                             </div>
                         </section>
                         <section className="form-row row-label">
