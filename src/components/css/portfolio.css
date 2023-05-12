@@ -1,0 +1,11 @@
+.portfolio-element{
+    display: flex;
+
+    padding: 2%;
+
+    flex-direction: column;
+
+    border: solid 2px var(--tab-3);
+
+    margin-top: 2vh;
+}

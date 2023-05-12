@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import './css/tab.css';
 
 /* the Tab component takes 3 props
@@ -10,6 +11,8 @@ import './css/tab.css';
 
 function Tab({content, id, title}){
     const tabs = document.getElementsByClassName("tab");
+    const tabRef = useRef(null);
+    const refContent = useRef(null);
 
     function resetTabs(){
         for(let tab of tabs){
@@ -17,9 +20,9 @@ function Tab({content, id, title}){
         }
     }
 
-    function openTab(e){
+    function openTab(){
         const tabs = document.getElementsByClassName("tab");
-        const currTab = e.target.classList;
+        const currTab = tabRef.current.classList;
 
         /* if tab is already opened */
         if(currTab.contains("tab-opened")){
@@ -34,20 +37,20 @@ function Tab({content, id, title}){
             if(!tab.classList.contains("tab-opened")){
                 tab.className = "tab tab-minimized";
             } 
-            if(tab.classList.contains("tab-opened") && tab.id != e.target.id){
+            if(tab.classList.contains("tab-opened") && tab.id != tabRef.current.id){
                 tab.className = "tab tab-minimized";
             }
         }
+
+        refContent.current.scroll({top:0, behavior: 'instant'});
     }
 
     return(
         <div id={id} className="tab tab-unopened" 
-            onClick={(e)=> {
-                    e.stopPropagation(); 
-                    openTab(e);
-                    }}>
+            ref={tabRef}
+            onClick={(e)=>{e.stopPropagation(); openTab();}}>
             <h2 className='tab-title'><span>{title}</span></h2>
-            <section className='tab-content tab-content-hidden'>
+            <section className='tab-content tab-content-hidden' ref={refContent}>
                 {content}
             </section>
         </div>

@@ -193,7 +193,7 @@ function ContactForm({toggle, toggleOff, lang}){
                        </section>
                        <section className="form-row">
                             <div className="form-elem form-submit">
-                                <button type="submit" className='submit-button' onClick={handleSubmit}>
+                                <button type="submit" id="submitBtn" className='submit-button' onClick={handleSubmit}>
                                     {lang==="en"?"Send":"Envoyer"}
                                 </button> 
                             </div>

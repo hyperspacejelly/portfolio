@@ -81,11 +81,13 @@
 
 /*****************Tab Content Behavior*********************/
 .tab-content{
-    padding: 1vh 0vw 0vh 2vw;
+    overflow: auto;
 
-    pointer-events: none;
+    padding: 1vh 2vw 1vh 2vw;
 
-    width: 70vw;
+    pointer-events:stroke;
+
+    width: 65vw;
     display: flex;
     flex-grow: 0;
     flex-shrink: 0;
