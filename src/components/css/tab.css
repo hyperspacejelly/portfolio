@@ -81,18 +81,28 @@
 
 /*****************Tab Content Behavior*********************/
 .tab-content{
-    overflow: auto;
+    scrollbar-width: thin;
 
-    padding: 1vh 2vw 1vh 2vw;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    padding: 1vh 2vw 2vh 2vw;
 
     pointer-events:stroke;
 
     width: 65vw;
+    height: 100%;
     display: flex;
     flex-grow: 0;
     flex-shrink: 0;
     flex-direction: column;
     transition: opacity 400ms ease-in-out, transform 400ms ease-in-out, visibility 400ms ease-in-out;
+
+
+}
+
+.tab-overflow-inner{
+    height: fit-content;
 }
 
 .tab-unopened .tab-content,

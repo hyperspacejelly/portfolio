@@ -1,11 +1,45 @@
+.element-taglist{
+    display: flex;
+    font-size: 2rem;
+    margin: 0;
+}
+    
+
+.element-taglist{
+    display: flex;
+    column-gap: 1vh;
+}
+
+.element-taglist button:hover{
+    color: var(--tab-3);
+    cursor: pointer;
+}
+
+
 .portfolio-element{
+    overflow: hidden;
+
     display: flex;
 
-    padding: 2%;
+    padding-bottom: 2%;
 
     flex-direction: column;
 
-    border: solid 2px var(--tab-3);
+    border-bottom: solid 2px var(--tab-3);
 
     margin-top: 2vh;
+
+    height: auto;
+
+    max-height: 100vh;
+    width: 100%;
+
+    transition: max-height 0.5s, padding-bottom 0.5s , margin-top 0.5s, border-bottom 0.5s;
+}
+
+.portfolio-hidden{
+    padding: 0px;
+    margin: 0px;
+    border: solid 0px rgb(255, 255, 255, 0);
+    max-height: 0px;
 }

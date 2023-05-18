@@ -51,7 +51,9 @@ function Tab({content, id, title}){
             onClick={(e)=>{e.stopPropagation(); openTab();}}>
             <h2 className='tab-title'><span>{title}</span></h2>
             <section className='tab-content tab-content-hidden' ref={refContent}>
-                {content}
+                <div className='tab-overflow-inner'>
+                    {content}
+                </div>
             </section>
         </div>
     );
