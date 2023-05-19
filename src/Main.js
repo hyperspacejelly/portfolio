@@ -36,8 +36,10 @@ function Main() {
           <main>
             <ContactForm lang={lang} toggle={contactOpen} toggleOff={()=>setContactOpen(false)} />
             <Tab id="tech" content={<Tech content={data.tech.content} />} title="Tech"/>
-            <Tab id="portfolio" content={
-                          <Portfolio lang={lang} content={data.portfolio.content} taglist={data.portfolio.taglist} imgDir={data.portfolio.imgDir}/>} 
+            <Tab id="portfolio" 
+                  content={
+                        <Portfolio lang={lang} content={data.portfolio.content} taglist={data.portfolio.taglist} imgDir={data.portfolio.imgDir} />
+                      } 
                   title="Portfolio"/>
             <Tab id="experience" content={<h3>experience</h3>} title="Experience"/>
             <Tab id="other" content={<h3>other</h3>} title={lang==="en"?"Links":"Liens"}/>

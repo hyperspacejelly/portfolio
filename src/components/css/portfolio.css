@@ -21,13 +21,13 @@
 
     display: flex;
 
-    padding-bottom: 2%;
+    padding-bottom: 3vh;
 
     flex-direction: column;
 
     border-bottom: solid 2px var(--tab-3);
 
-    margin-top: 2vh;
+    margin-top: 3vh;
 
     height: auto;
 
@@ -43,3 +43,82 @@
     border: solid 0px rgb(255, 255, 255, 0);
     max-height: 0px;
 }
+
+/*Portfolio inner styling*/
+.portfolio-title{
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    margin: 1vh 0 2vh 0;
+}
+.portfolio-year{
+    margin: 0 0 2vh 1vh;
+    font-style: oblique;
+    font-weight: 400;
+    font-size: 2rem;
+}
+.portfolio-text{
+    line-height: 1.5;
+    display: flex;
+    justify-content: flex-start;
+    column-gap: 2vw;
+    font-size: 2rem;
+
+    white-space: pre-line;  
+    vertical-align: bottom;
+}
+.portfolio-subheader{
+    display: block;
+    font-weight: 600;
+    font-size: 2.2rem;
+}
+.portfolio-text p{
+    display: block;
+    width: 50%;
+}
+
+/***** Portfolio navigation styling *******/
+.portfolio-nav{
+    display: flex;
+    font-size: 2rem;
+}
+
+.dropdown-select.portfolio-select{
+    width: 40%;
+}
+
+.portfolio-select .dropdown-base{
+    background-color: var(--white-bg-font);
+    border: solid 1px var(--tab-3);
+}
+
+.portfolio-select .dropdown-base:hover,
+.portfolio-select .dropdown-option:hover{
+    background-color: var(--tab-3);
+    color: var(--white-bg-font);
+}
+
+.portfolio-select .dropdown-active-menu{
+    border: solid 1px var(--tab-3);
+    border-top: none;
+    background-color: var(--white-bg-font);
+}
+
+.portfolio-select .dropdown-active-hidden{
+    border: none;
+}
+
+.portfolio-nav button{
+    display: block;
+    padding: 0vh 1vw;
+    font-weight: 400;
+    background-color: var(--white-bg-font);
+    border: solid 1px var(--tab-3) ;
+    border-left: none;
+
+}
+
+.portfolio-nav button:hover{
+    color: var(--white-bg-font);
+    background-color: var(--tab-3);
+}
+
