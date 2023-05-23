@@ -54,13 +54,16 @@ function Tab({ content, id, title }) {
 
     function revealScrollButton(e){
         // e.stopPropagation();
-        if(Math.ceil(e.target.scrollTop) > 0){
+        // console.log(Math.ceil(e.target.scrollTop));
+        if(Math.ceil(e.target.scrollTop) > 1){
             if(!refScroll.current.classList.contains("scroll-btn-display")){
+                console.log("affiche btn");
                 refScroll.current.classList.toggle("scroll-btn-display");
             }
         }
         else{
             if(refScroll.current.classList.contains("scroll-btn-display")){
+                console.log("cache btn");
                 refScroll.current.classList.toggle("scroll-btn-display");
             }
         }
@@ -75,9 +78,10 @@ function Tab({ content, id, title }) {
                 <div className='tab-overflow-inner'>
                     {content}
                     <button className='scrolltop' onClick={scrollTop} ref={refScroll}>
-                        <img  src="https://www.lucien-jely.fr/img/arrow-up2.svg" alt="up arrow" />
+                        <img src="https://www.lucien-jely.fr/img/arrow-up2.svg" alt="up arrow" />
                     </button>
                 </div>
+                
             </section>
         </div>
     );

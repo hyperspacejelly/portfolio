@@ -215,6 +215,9 @@
 @media screen and (max-width:500px) {
 
     /* MOBILE TAB TITLE BEHAVIOR */
+    .tab{
+        box-shadow: 0px -5px 15px rgb(0, 0, 0, 0.3);
+    }
     .tab-minimized .tab-title span {
         transform: rotate(0deg);
         font-size: 2rem;
@@ -256,7 +259,7 @@
 
     .tab-unopened .scrolltop,
     .tab-minimized .scrolltop{
-        display: none;
+        visibility: hidden;
         transform: translateY(130%);
     }
 
@@ -268,8 +271,7 @@
 
         position: sticky;
         bottom: 0vh;
-        left: 80%;
-
+        left: 100%;
         background-color: var(--white-bg-font);
 
         visibility: hidden;
