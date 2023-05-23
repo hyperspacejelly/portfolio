@@ -1,5 +1,5 @@
 /**************************Main Tab Behavior*******************************/
-.tab{
+.tab {
     display: flex;
     position: relative;
     flex: 1 1 auto;
@@ -12,28 +12,29 @@
     box-shadow: -5px 0px 15px rgb(0, 0, 0, 0.3);
 }
 
-.tab-unopened{
+.tab-unopened {
     flex-basis: 25%;
 }
 
-.tab-unopened:hover{
+.tab-unopened:hover {
     flex-basis: 30%;
 }
 
-.tab-opened{
-   flex-basis: 75%; 
+.tab-opened {
+    flex-basis: 75%;
 }
 
-.tab-minimized{
+.tab-minimized {
     flex: 1 1 3%;
 }
-.tab-minimized:hover{
+
+.tab-minimized:hover {
     flex-grow: 1.3;
 }
 
 
 /*Behavior of the title of the tab when default, opened and minimized*/
-.tab-title{
+.tab-title {
     text-align: center;
     pointer-events: none;
 
@@ -53,7 +54,8 @@
 
     margin: 0;
 }
-.tab-title span{
+
+.tab-title span {
     display: block;
     width: fit-content;
     height: fit-content;
@@ -69,18 +71,18 @@
     font-size: 4rem;
 }
 
-.tab-minimized .tab-title span{
+.tab-minimized .tab-title span {
     transform: rotate(-90deg);
     font-size: 2vw;
 }
 
-.tab-opened .tab-title{
+.tab-opened .tab-title {
     visibility: collapse;
     opacity: 0;
 }
 
 /*****************Tab Content Behavior*********************/
-.tab-content{
+.tab-content {
     position: relative;
 
     scrollbar-width: thin;
@@ -88,9 +90,9 @@
     overflow-y: scroll;
     overflow-x: hidden;
 
-    padding: 1vh 2vw 2vh 2vw;
+    padding: 2vh 2vw 2vh 2vw;
 
-    pointer-events:stroke;
+    pointer-events: stroke;
 
     width: 65vw;
     height: 100%;
@@ -103,74 +105,75 @@
 
 }
 
-.tab-overflow-inner{
+.tab-overflow-inner {
     height: fit-content;
     position: relative;
 }
 
 .tab-unopened .tab-content,
-.tab-minimized .tab-content{
+.tab-minimized .tab-content {
     visibility: hidden;
     opacity: 0.3;
     transform: translateX(3vw);
 }
 
 
-.tab-opened .tab-content{
+.tab-opened .tab-content {
     visibility: visible;
-   
+
     opacity: 1;
     transform: translateX(0vw);
 }
 
 /*******************Individual Tab Behavior***************/
 
-#tech{
+#skills {
     /*background-color:darkseagreen;*/
     background-color: var(--tab-4);
     z-index: 700;
 }
-#tech .scrolltop{
+
+#skills .scrolltop {
     background-color: var(--tab-4);
 }
 
-#portfolio{
+#portfolio {
     /* background-color: indianred; */
     background-color: var(--tab-3);
     z-index: 800;
 }
 
-#portfolio .scrolltop{
+#portfolio .scrolltop {
     background-color: var(--tab-3);
 }
 
 
-#experience{
+#experience {
     /* background-color: mediumslateblue; */
     background-color: var(--tab-2);
     z-index: 900;
 }
 
-#experience .scrolltop{
+#experience .scrolltop {
     background-color: var(--tab-2);
 }
 
 
-#other{
+#other {
     /* background-color: moccasin; */
     background-color: var(--tab-1);
     z-index: 1000;
 }
 
-#other .scrolltop{
+#other .scrolltop {
     background-color: var(--tab-1);
 }
 
 
-#tech.tab-opened,
+#skills.tab-opened,
 #portfolio.tab-opened,
 #experience.tab-opened,
-#other.tab-opened{
+#other.tab-opened {
     background-color: var(--white-bg-font);
 }
 
@@ -178,7 +181,7 @@
 
 /*SCROLL UP BTN*/
 
-.scrolltop{
+.scrolltop {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -194,17 +197,97 @@
 
     transition: visibility 600ms, transform 500ms ease-out;
 
-    box-shadow: 0px 2px 3px rgb(0,0,0,0.8);
+    box-shadow: 0px 2px 3px rgb(0, 0, 0, 0.8);
 
     transform: translateY(130%);
 }
 
-.scrolltop img{
+.scrolltop img {
     width: 2vw;
     aspect-ratio: 1/1;
 }
 
-.scroll-btn-display{
+.scroll-btn-display {
     visibility: visible;
     transform: translateY(0%);
+}
+
+@media screen and (max-width:500px) {
+
+    /* MOBILE TAB TITLE BEHAVIOR */
+    .tab-minimized .tab-title span {
+        transform: rotate(0deg);
+        font-size: 2rem;
+    }
+
+    /*****************MOBILE TAB CONTENT*********************/
+    .tab-content {
+        overflow-y: scroll;
+        overflow-x: hidden;
+
+        padding: 2vh 2vw 2vh 2vw;
+
+        pointer-events: stroke;
+
+        width: 100vw;
+        height: 100%;
+    }
+
+    .tab-overflow-inner {
+        height: fit-content;
+        position: relative;
+    }
+
+    .tab-unopened .tab-content,
+    .tab-minimized .tab-content {
+        visibility: hidden;
+        opacity: 0.3;
+        transform: translateY(3vh);
+    }
+
+
+    .tab-opened .tab-content {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0vh);
+    }
+
+    /*SCROLL UP BTN*/
+
+    .tab-unopened .scrolltop,
+    .tab-minimized .scrolltop{
+        display: none;
+        transform: translateY(130%);
+    }
+
+    .scrolltop {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5vh;
+
+        position: sticky;
+        bottom: 0vh;
+        left: 80%;
+
+        background-color: var(--white-bg-font);
+
+        visibility: hidden;
+
+        transition: visibility 600ms, transform 500ms ease-out;
+
+        box-shadow: 0px 2px 3px rgb(0, 0, 0, 0.8);
+
+        transform: translateY(130%);
+    }
+
+    .scrolltop img {
+        width: 8vw;
+        aspect-ratio: 1/1;
+    }
+
+    .scroll-btn-display {
+        visibility: visible;
+        transform: translateY(0%);
+    }
 }

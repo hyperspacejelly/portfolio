@@ -20,6 +20,7 @@
 }
 
 .dropdown-active-menu{
+    z-index: 2000;
     position: absolute;
     width: 100%;
     background-color: coral;

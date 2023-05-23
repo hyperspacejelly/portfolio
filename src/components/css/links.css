@@ -1,0 +1,52 @@
+.link-cont{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1vh;
+}
+
+.link-element a{
+    display: block;
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 2vh;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--tab-1);
+}
+.link-element a::after{
+    position: relative;
+    content: "";
+    display: inline-block;
+    margin-left: 1rem;
+    height: 2.5rem;
+    aspect-ratio: 1/1;
+    background-color: var(--tab-1);
+    z-index: 0;
+
+    mask: url("./icons/link.svg") no-repeat center / contain ;
+}
+
+.link-element a:hover{
+    color: var(--tab-3-hover) ;
+}
+.link-element a:hover::after{
+    background-color: var(--tab-3-hover);
+}
+
+.link-element p{
+    font-weight: 400;
+    font-size: 2rem;
+    margin: 0px 0px 1vh 0px;
+}
+
+
+.link-element{
+    max-width: 100%;
+    padding: 2vh 2vw;
+
+    border-bottom: solid 1px var(--tab-1);
+}
+
+.link-element:last-child{
+    border-bottom: none;
+}

@@ -21,6 +21,9 @@ function Portfolio({ content, taglist, imgDir, lang }) {
 
     const portfolioRender = content.map((el) => {
         i++;
+
+        const title = el.url ? <a onClick={(e)=>e.stopPropagation()} target='blank_' href={el.url}>{el.title}</a> : el.title;
+
         let tags = el.tags.map((tag) => {
             return (
                 <button key={el.title + "_" + tag + i} onClick={(e) => {
@@ -34,7 +37,8 @@ function Portfolio({ content, taglist, imgDir, lang }) {
         });
         return (
             <div key={el.title + i} className='portfolio-element'>
-                <h3 className='portfolio-title'>{el.title} <span className='portfolio-year'>{el.year}</span></h3>
+                <h3 className='portfolio-title'>
+                    {title} <span className='portfolio-year'>{el.year}</span></h3>
                 <img src={imgDir + el.thumbnail} alt={el.title} />
                 <section className='portfolio-text'>
                     <p>

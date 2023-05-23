@@ -7,6 +7,8 @@
   --tab-3: #5753c9;
   --tab-4: #6d53c9; 
 
+  --tab-3-hover:#c95753;
+
   --sidebar: #dcd5f7;
   --dark-font: #2c2c2e;
 
@@ -73,5 +75,25 @@ main{
 @media screen and (-webkit-device-pixel-ratio: 1.25) {
   :root{
     font-size: 9px;
+  }
+}
+
+/********************************************** Mobile CSS**************************************/
+
+@media screen and (max-width: 500px) {
+  html,body{
+    overscroll-behavior: contain;
+  }
+
+  #root{
+    flex-direction: column;
+  }
+
+  main{
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    flex-direction: column;
+    justify-content: flex-start;
   }
 }

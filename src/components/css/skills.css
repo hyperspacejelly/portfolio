@@ -1,0 +1,39 @@
+.skills-cont{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    height: fit-content;
+    padding: 0vh 2vw;
+    row-gap: 2vh;
+}
+
+.skills-element{
+    width: 47%;
+}
+
+.skills-element h3{
+    text-align: center;
+    font-size: 3rem;
+    margin: 0vh 0vw 1vh 0vw;
+    padding: 1vh 0vw;
+    background-color: var(--tab-4);
+    color: var(--white-bg-font);
+    text-shadow: 0px 0px 5px rgb(0,0,0,0.4);
+}
+
+.skills-content{
+    padding: 0vh 1vw;
+    font-size: 2rem;
+    line-height: 1.5;
+    margin: 0px;
+}
+
+.skills-content ul{
+    padding: 0vh 2vw;
+    list-style:circle;
+}
+
+.skills-content li{
+    margin-bottom: 1vh;
+}

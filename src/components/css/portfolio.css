@@ -49,6 +49,31 @@
     text-transform: uppercase;
     font-size: 2.5rem;
     margin: 1vh 0 2vh 0;
+    color: var(--tab-3);
+}
+
+.portfolio-title a{
+    text-decoration: none;
+    color: var(--tab-3);
+}
+.portfolio-title a::after{
+    position: relative;
+    content: "";
+    display: inline-block;
+    margin-left: 1rem;
+    height: 2rem;
+    aspect-ratio: 1/1;
+    background-color: var(--tab-3);
+    z-index: 0;
+
+    mask: url("./icons/link.svg") no-repeat center / contain ;
+}
+
+.portfolio-title a:hover{
+    color: var(--tab-3-hover) ;
+}
+.portfolio-title a:hover::after{
+    background-color: var(--tab-3-hover);
 }
 .portfolio-year{
     margin: 0 0 2vh 1vh;
@@ -122,3 +147,85 @@
     background-color: var(--tab-3);
 }
 
+
+@media screen and (max-width:500px) {
+    /* Portfolio content for mobile */
+
+   
+    .portfolio-element{
+        padding: 0% 5% 3vh 5%;
+    }
+
+    .portfolio-hidden{
+        padding: 0%;
+    }
+
+
+    .portfolio-title{
+        display: flex;
+        flex-direction: column;
+        font-size: 2.3rem;
+        margin: 1vh 0 0vh 0;
+    }
+
+    .portfolio-title a{
+        display: block;
+        width: fit-content;
+    }
+
+    .portfolio-year{
+        margin: 1vh 0 2vh 0vh;
+        font-style: oblique;
+        font-weight: 400;
+        font-size: 1.8rem;
+    }
+
+    .portfolio-text{
+        flex-direction: column;
+        align-items: center;
+        font-size: 1.7rem;
+        margin-bottom: 2vh;
+    }
+    .portfolio-subheader{
+        display: block;
+        font-weight: 600;
+        font-size: 2rem;
+    }
+    .portfolio-text p{
+        margin-bottom: 0px;
+        width: 100%;
+    }
+
+    /***** Portfolio navigation mobile styling *******/
+    .dropdown-select.portfolio-select{
+        width: 78%;
+    }
+    .portfolio-nav button{
+       width: 18%;
+       text-align: center;
+    }
+
+    .portfolio-nav button:hover{
+        color: var(--tab-3);
+        background-color: var(--white-bg-font);
+    }
+
+    .portfolio-nav button:active{
+        color: var(--white-bg-font);
+        background-color: var(--tab-3);
+    }
+
+    .portfolio-select .dropdown-base:hover,
+    .portfolio-select .dropdown-option:hover{
+        background-color: var(--white-bg-font);
+        color: var(--tab-3);
+    }
+    .portfolio-select .dropdown-base:active,
+    .portfolio-select .dropdown-option:active{
+        background-color: var(--tab-3);
+        color: var(--white-bg-font);
+    }
+
+    
+    
+}

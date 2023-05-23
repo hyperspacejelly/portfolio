@@ -2,8 +2,10 @@ import { useState,  useEffect } from "react";
 import SideBar from "./components/SideBar";
 import Tab from "./components/Tab";
 import Portfolio from "./components/Portfolio";
-import Tech from "./components/Tech";
+import Skills from "./components/Skills";
 import ContactForm from "./components/ContactForm";
+import Experience from "./components/Experience";
+import Links from "./components/Links";
 
 async function getData(lang){
   const API_ENDPOINT = "https://api.lucien-jely.fr/read.php?lang=";
@@ -18,10 +20,6 @@ function Main() {
   const [contactOpen, setContactOpen] = useState(false);
 
   useEffect(()=>{
-   getData(lang).then((res)=>setData(res));
-  },[]);
-
-  useEffect(()=>{
     getData(lang).then((res)=>setData(res));
    },[lang]);
 
@@ -32,17 +30,23 @@ function Main() {
   return (
     <>
       {data!=null && <>
-          <SideBar setLang={setLang} info={data.info} toggleContact={toggleContact}/>
+          <SideBar setLang={setLang} info={data.info.content} toggleContact={toggleContact}/>
           <main>
             <ContactForm lang={lang} toggle={contactOpen} toggleOff={()=>setContactOpen(false)} />
-            <Tab id="tech" content={<Tech content={data.tech.content} />} title="Tech"/>
+            <Tab id="skills" 
+                  content={<Skills content={data.skills.content} lang={lang} />} 
+                  title={lang==="fr"?"Compétences":"Skills"}/>
+
             <Tab id="portfolio" 
                   content={
                         <Portfolio lang={lang} content={data.portfolio.content} taglist={data.portfolio.taglist} imgDir={data.portfolio.imgDir} />
                       } 
                   title="Portfolio"/>
-            <Tab id="experience" content={<h3>experience</h3>} title="Experience"/>
-            <Tab id="other" content={<h3>other</h3>} title={lang==="en"?"Links":"Liens"}/>
+
+            <Tab id="experience" 
+                  content={<Experience content={data.experience} lang={lang} />} 
+                  title="Experience"/>
+            <Tab id="other" content={<Links content={data.other.content} />} title={lang==="en"?"Links":"Liens"}/>
           </main>
         </>}
       {data===null && <></>}

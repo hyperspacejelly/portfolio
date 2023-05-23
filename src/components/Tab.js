@@ -53,8 +53,8 @@ function Tab({ content, id, title }) {
     }
 
     function revealScrollButton(e){
-        e.stopPropagation();
-        if(e.target.scrollTop > 0){
+        // e.stopPropagation();
+        if(Math.ceil(e.target.scrollTop) > 0){
             if(!refScroll.current.classList.contains("scroll-btn-display")){
                 refScroll.current.classList.toggle("scroll-btn-display");
             }
