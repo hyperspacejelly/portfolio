@@ -85,6 +85,8 @@
 .tab-content {
     position: relative;
 
+    background-color: var(--white-bg-font);
+
     scrollbar-width: thin;
 
     overflow-y: scroll;

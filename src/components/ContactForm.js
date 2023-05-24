@@ -65,7 +65,7 @@ function ContactForm({toggle, toggleOff, lang}){
 
         // if email is ok we still check if one of those fields is empty so we can return that validation failed
         for(const[elem, value] of Object.entries(payload)){
-            if(elem != "tel" && value === ""){
+            if(elem !== "tel" && value === ""){
                 validate=false;
                 break;
             }
@@ -103,7 +103,7 @@ function ContactForm({toggle, toggleOff, lang}){
         if(validateData(payload)){
             postFormData(payload).then(res=>{
                 console.log(res.status);
-                if(res.status=="200"){
+                if(res.status==="200"){
                     document.getElementById("submitBtn").disabled = true;
                     clearForm();
                     headerRef.current.innerHTML = (lang==="fr")?"Message envoyé !" : "Message sent!";
@@ -182,8 +182,8 @@ function ContactForm({toggle, toggleOff, lang}){
                         <section className="form-row row-label">
                             <label htmlFor="form-message">{lang==="en"?"Your message":"Votre message"}</label>
                         </section>
-                        <section className="form-row">
-                            <div className="form-elem form-msg">
+                        <section className="form-row form-msg">
+                            <div className="form-elem">
                                 <textarea id="form-message" 
                                         ref={msgRef}
                                         placeholder={lang==="en"?"Required":"Requis"}

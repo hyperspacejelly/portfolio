@@ -5,7 +5,7 @@ ex => (title, url) project the skill was used in*/
 
 import "./css/skills.css";
 
-function Skills({content, lang}){
+function Skills({content}){
     let i = 0;
     const skillListRender = content.map((el)=>{
         let j = 0;
@@ -20,7 +20,7 @@ function Skills({content, lang}){
         i++;
         return(
             <div key={el.title + i} className="skills-element">
-                <h3>{el.title}</h3>
+                <h3 onClick={(e)=>e.stopPropagation()} onTouchEnd={toggleSkillDisplay}>{el.title}</h3>
                 <section className="skills-content">
                     <ul>
                         {subSkillRender}
@@ -30,6 +30,10 @@ function Skills({content, lang}){
         );
     });
 
+    function toggleSkillDisplay(e){
+        e.stopPropagation();
+        e.target.parentElement.getElementsByClassName('skills-content')[0].classList.toggle("skills-hidden");
+    }
 
     return(
         <div className="skills-cont">

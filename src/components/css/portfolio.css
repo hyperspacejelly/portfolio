@@ -35,6 +35,8 @@
     width: 100%;
 
     transition: max-height 0.5s, padding-bottom 0.5s , margin-top 0.5s, border-bottom 0.5s;
+
+    background-color: var(--white-bg-font);
 }
 
 .portfolio-hidden{

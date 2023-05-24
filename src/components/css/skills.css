@@ -10,6 +10,7 @@
 
 .skills-element{
     width: 47%;
+    background-color: var(--white-bg-font);
 }
 
 .skills-element h3{
@@ -27,6 +28,12 @@
     font-size: 2rem;
     line-height: 1.5;
     margin: 0px;
+
+    height: auto;
+    max-height: 100vh;
+
+    transition: max-height 0.5s;
+    overflow: hidden;
 }
 
 .skills-content ul{
@@ -36,4 +43,38 @@
 
 .skills-content li{
     margin-bottom: 1vh;
+}
+
+.skills-hidden{
+    height: auto;
+    max-height: 0px;    
+}
+
+@media screen and (max-width:500px) {
+    .skills-cont{
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        flex-direction: column;
+
+        row-gap: 2vh;
+    }
+    .skills-element{
+        width: 100%;
+    }
+    .skills-content ul{
+        padding: 0vh 0vh 0vh 4vh;
+    }
+    .skills-element h3{
+        font-size: 2.6rem;
+    }
+    .skills-content{
+        font-size: 1.8rem;
+    }
+
+    .skills-element h3:active{
+        background-color: var(--sidebar);
+        color: var(--dark-font);
+        text-shadow: none;
+    }
 }

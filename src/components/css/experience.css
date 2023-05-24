@@ -18,6 +18,7 @@
 
 .exp-element{
     line-height: 1.75;
+    background-color: var(--white-bg-font);
 }
 
 .exp-period{
@@ -55,3 +56,52 @@
     margin-bottom: 2vh;
 }
 
+@media screen and (max-width:500px){
+    .exp-section-title{
+        margin: 0 0 2vh 0;
+        font-size: 2.5rem;
+    }
+    
+    .exp-section{
+        padding: 2vh 2vw;
+    }
+
+    .exp-period{
+        font-size: 1.5rem;
+    }
+    .exp-title{
+        font-size: 1.9rem;
+    }
+    .exp-list{
+        padding-left: 2vh;
+        margin-top: 1vh;
+    }
+    .exp-list li{
+        font-size: 1.6rem;
+        margin-bottom: 1vh;
+    }
+
+    #expFormations{
+        padding: 0vh 2vw;
+    }
+    
+    #expFormations .exp-section{
+        row-gap: 3vh;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    
+    #expFormations .exp-element{
+        width: 100%;
+    }
+    
+    #expFormations .exp-title{
+        font-size: 1.9rem;
+    }
+    
+    #expPro{
+        margin-bottom: 1vh;
+        padding: 0vh 2vw;
+    }
+}

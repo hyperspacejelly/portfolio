@@ -6,6 +6,7 @@
 
 .link-element a{
     display: block;
+    width: fit-content;
     font-size: 3rem;
     font-weight: 600;
     margin-bottom: 2vh;
@@ -45,8 +46,44 @@
     padding: 2vh 2vw;
 
     border-bottom: solid 1px var(--tab-1);
+
+    background-color: var(--white-bg-font);
 }
 
 .link-element:last-child{
     border-bottom: none;
+}
+
+@media screen and (max-width:500px) {
+    .link-cont{
+        padding: 0vh 2vw;
+    }
+
+    .link-element a{
+        font-size: 2.5rem;
+        margin-bottom: 2vh;
+    }
+    .link-element a::after{
+        height: 2.1rem;
+    }
+
+    .link-element a:hover{
+        color: var(--tab-1) ;
+    }
+    .link-element a:hover::after{
+        background-color: var(--tab-1);
+    }
+
+    .link-element a:active{
+        color: var(--tab-3-hover) ;
+    }
+    .link-element a:active::after{
+        background-color: var(--tab-3-hover);
+    }
+    
+    .link-element p{
+        font-weight: 400;
+        font-size: 1.6rem;
+        margin: 0px 0px 1vh 0px;
+    }
 }
