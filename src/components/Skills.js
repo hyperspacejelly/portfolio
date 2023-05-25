@@ -3,7 +3,6 @@ title => name of the skill
 desc => description of the skill
 ex => (title, url) project the skill was used in*/
 
-import { useState } from "react";
 import "./css/skills.css";
 
 function Skills({content}){
