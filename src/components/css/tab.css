@@ -115,7 +115,7 @@
 .tab-unopened .tab-content,
 .tab-minimized .tab-content {
     visibility: hidden;
-    opacity: 0.3;
+    opacity: 0;
     transform: translateX(3vw);
 }
 
@@ -246,7 +246,7 @@
     .tab-unopened .tab-content,
     .tab-minimized .tab-content {
         visibility: hidden;
-        opacity: 0.3;
+        opacity: 0;
         transform: translateY(3vh);
     }
 
