@@ -69,6 +69,7 @@ function Tab({ content, id, title }) {
         }
     }
 
+
     return (
         <div id={id} className="tab tab-unopened"
             ref={tabRef}
@@ -77,7 +78,7 @@ function Tab({ content, id, title }) {
             <section className='tab-content tab-content-hidden' ref={refContent} onScroll={revealScrollButton}>
                 <div className='tab-overflow-inner'>
                     {content}
-                    <button className='scrolltop' onClick={scrollTop} ref={refScroll}>
+                    <button className='scrolltop' onClick={scrollTop} ref={refScroll} >
                         <img src="https://www.lucien-jely.fr/img/arrow-up2.svg" alt="up arrow" />
                     </button>
                 </div>

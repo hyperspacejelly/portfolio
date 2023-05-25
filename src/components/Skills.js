@@ -3,10 +3,12 @@ title => name of the skill
 desc => description of the skill
 ex => (title, url) project the skill was used in*/
 
+import { useState } from "react";
 import "./css/skills.css";
 
 function Skills({content}){
     let i = 0;
+   
     const skillListRender = content.map((el)=>{
         let j = 0;
         const subSkillRender = el.desc.map((skill)=>{
@@ -20,7 +22,7 @@ function Skills({content}){
         i++;
         return(
             <div key={el.title + i} className="skills-element">
-                <h3 onClick={(e)=>e.stopPropagation()} onTouchEnd={toggleSkillDisplay}>{el.title}</h3>
+                <h3  onClick={toggleSkillDisplay}>{el.title}</h3>
                 <section className="skills-content">
                     <ul>
                         {subSkillRender}
@@ -31,8 +33,10 @@ function Skills({content}){
     });
 
     function toggleSkillDisplay(e){
-        e.stopPropagation();
-        e.target.parentElement.getElementsByClassName('skills-content')[0].classList.toggle("skills-hidden");
+        if(window.innerWidth < 600){
+            e.stopPropagation();
+            e.target.parentElement.getElementsByClassName('skills-content')[0].classList.toggle("skills-hidden");
+        }
     }
 
     return(
