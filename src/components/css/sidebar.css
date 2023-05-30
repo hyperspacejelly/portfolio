@@ -58,8 +58,10 @@
 }
 
 #portrait{
-    width: 80%;
-    aspect-ratio: 1/1;
+    width: auto;
+    max-width: 80%;
+    height: auto;
+    /* aspect-ratio: 1/1; */
 
     border-radius: 10px;
     overflow: hidden;
@@ -71,10 +73,12 @@
     text-align: justify;
     color: var(--dark-font);
     font-size: clamp(1.4rem, 1.5vw , 1.7rem);
+    white-space: pre-line;
+    line-height: 1.5;
 }
-#bio::before{
+/* #bio::before{
     content: "\00a0 \00a0 \00a0 ";
-}
+} */
 
 #buttons{
     width: 100%;
