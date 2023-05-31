@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import './css/tab.css';
+import { useState } from 'react';
 
 /* the Tab component takes 3 props
 
@@ -11,6 +12,7 @@ import './css/tab.css';
 
 function Tab({ content, id, title }) {
     const tabs = document.getElementsByClassName("tab");
+    const [prevSelect, setPrevSelect] = useState(0);
     const tabRef = useRef(null);
     const refContent = useRef(null);
     const refScroll = useRef(null);
@@ -28,9 +30,12 @@ function Tab({ content, id, title }) {
 
         /* if tab is already opened */
         if (currTab.contains("tab-opened")) {
-            if(window.getSelection().toString().length === 0){
+            /* we check if text is selected and close if it isn't (and isn't clicking for deselecting)*/
+            const currSelect=window.getSelection().toString().length;
+            if(currSelect === 0 && prevSelect === 0){
                 resetTabs();
             }
+            setPrevSelect(currSelect);
             return;
         }
 
