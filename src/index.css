@@ -38,7 +38,7 @@ body {
 
   font-family: 'Quicksand', sans-serif;
 
-  user-select: none;
+  /* user-select: auto; */
 
   color: var(--dark-font);
 }

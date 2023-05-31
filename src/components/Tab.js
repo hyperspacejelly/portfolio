@@ -28,7 +28,9 @@ function Tab({ content, id, title }) {
 
         /* if tab is already opened */
         if (currTab.contains("tab-opened")) {
-            resetTabs();
+            if(window.getSelection().toString().length === 0){
+                resetTabs();
+            }
             return;
         }
 
