@@ -37,6 +37,7 @@
 .tab-title {
     text-align: center;
     pointer-events: none;
+    user-select: none;
 
     display: flex;
     width: 100%;
