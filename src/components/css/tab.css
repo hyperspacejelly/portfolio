@@ -214,7 +214,7 @@
     transform: translateY(0%);
 }
 
-@media screen and (max-width:500px) {
+@media screen and (max-width:800px) {
 
     /* MOBILE TAB TITLE BEHAVIOR */
     .tab{

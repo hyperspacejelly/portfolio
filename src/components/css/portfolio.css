@@ -39,6 +39,11 @@
     background-color: var(--white-bg-font);
 }
 
+.portfolio-element img{
+    width: 100%;
+    height: auto;
+}
+
 .portfolio-hidden{
     padding: 0px;
     margin: 0px;
@@ -150,7 +155,7 @@
 }
 
 
-@media screen and (max-width:500px) {
+@media screen and (max-width:800px) {
     /* Portfolio content for mobile */
 
    

@@ -32,7 +32,7 @@ function Skills({content}){
     });
 
     function toggleSkillDisplay(e){
-        if(window.innerWidth < 600){
+        if(window.innerWidth <= 800){
             e.stopPropagation();
             e.target.parentElement.getElementsByClassName('skills-content')[0].classList.toggle("skills-hidden");
         }

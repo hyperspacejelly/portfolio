@@ -69,7 +69,7 @@ main{
 }
 @media screen and (-webkit-device-pixel-ratio: 1.5) {
   :root{
-    font-size: 8px;
+    font-size: 9px;
   }
 }
 @media screen and (-webkit-device-pixel-ratio: 1.25) {
@@ -80,9 +80,10 @@ main{
 
 /********************************************** Mobile CSS**************************************/
 
-@media screen and (max-width: 500px) {
+
+@media screen and (max-width: 800px) {
   html,body{
-    overscroll-behavior: contain;
+    overscroll-behavior: none;
   }
 
   #root{
@@ -95,5 +96,10 @@ main{
     height: 100%;
     flex-direction: column;
     justify-content: flex-start;
+  }
+}
+@media screen and (min-width: 540px) and (max-width:800px) {
+  :root{
+    font-size: 12px;
   }
 }
