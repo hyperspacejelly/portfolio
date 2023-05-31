@@ -15,6 +15,6 @@ The site's main section is composed of 4 "tab" components that take another comp
 
 The site also contains a contact form that communicates with my API to send me a message directly in my inbox (that part was built using **PHPmailer**).
 
-All the icons used were from on [Feather Icons](https://feathericons.com/).
+All the icons used were from [Feather Icons](https://feathericons.com/).
 
 - **__Lucien Jély__**
