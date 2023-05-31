@@ -1,6 +1,9 @@
 import './css/sidebar.css';
+import { useNavigate } from 'react-router';
 
-function SideBar({setLang, info, toggleContact}){
+function SideBar({info, toggleContact}){
+    const navigate = useNavigate();
+
     return(
         <aside id="sidebar">           
             <img id="portrait" src={info.portrait} alt="Portrait" />
@@ -17,10 +20,10 @@ function SideBar({setLang, info, toggleContact}){
                     <img id="mailIcon" src="https://www.lucien-jely.fr/img/mail.svg" alt="enveloppe" />
                 </button>
                 <section id="langSelect">
-                    <button className="hover-button" onClick={()=>{setLang("fr")}} tooltip="Français">
+                    <button className="hover-button" onClick={()=>{navigate("/");}} tooltip="Français">
                         <img src="https://www.lucien-jely.fr/img/fr.svg" alt="French flag"/>
                     </button>
-                    <button className="hover-button" onClick={()=>{setLang("en")}} tooltip="English">
+                    <button className="hover-button" onClick={()=>{navigate("/en");}} tooltip="English">
                         <img src="https://www.lucien-jely.fr/img/us.svg" alt="US flag"/>
                     </button>
                 </section>

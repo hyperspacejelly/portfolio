@@ -1,5 +1,5 @@
 import './css/links.css';
-
+import React from 'react';
 
 
 function Links({content}){

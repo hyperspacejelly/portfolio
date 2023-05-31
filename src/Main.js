@@ -14,8 +14,7 @@ async function getData(lang){
   return data;
 }
 
-function Main() {
-  const [lang, setLang] = useState("fr");
+function Main({lang}) {
   const [data, setData] = useState(null);
   const [contactOpen, setContactOpen] = useState(false);
 
@@ -30,7 +29,7 @@ function Main() {
   return (
     <>
       {data!=null && <>
-          <SideBar setLang={setLang} info={data.info.content} toggleContact={toggleContact}/>
+          <SideBar info={data.info.content} toggleContact={toggleContact}/>
           <main>
             <ContactForm lang={lang} toggle={contactOpen} toggleOff={()=>setContactOpen(false)} />
             <Tab id="skills" 
