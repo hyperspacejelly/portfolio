@@ -13,7 +13,7 @@ There is very simple routing implemented (using react-router-dom), with the inde
 
 The site's main section is composed of 4 "tab" components that take another component as a prop (the content that is displayed when they are opened.)
 
-The site also contains a contact form that communicates with my API to send me a message directly in my inbox (that part was built using **PHPmailer**).
+The site also contains a contact form that communicates with my API to send me a message directly in my inbox (that part was built using [PHPmailer](https://github.com/PHPMailer/PHPMailer).
 
 All the icons used were from [Feather Icons](https://feathericons.com/).
 
