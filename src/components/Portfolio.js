@@ -55,12 +55,17 @@ function Portfolio({ content, taglist, imgDir, lang }) {
         );
     });
 
+    function scrollTop() {
+        document.getElementById("portfolio").getElementsByClassName("tab-content")[0].scroll({ top: 0, behavior: 'smooth' })
+    }
+
     function clearFilter(e) {
         e.stopPropagation();
         setFilter("none");
     }
 
     function tagHandleClick(tag) {
+        scrollTop();
         setFilter(tag);
     }
 
