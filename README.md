@@ -9,7 +9,7 @@ Web design / UI is by myself. This site is responsive.
 ## Info
 All the content is fetched from my small PHP API. Said content is fetched when initially loading the site and whenever the site language is switched.
 
-There is very simple routing implemented (using react-router-dom), with the index being the french version and "/en" its english version.
+There is very simple routing implemented (using react-router-dom), with the index being the french version and "/en" the english version.
 
 The site's main section is composed of 4 "tab" components that take another component as a prop (the content that is displayed when they are opened.)
 
